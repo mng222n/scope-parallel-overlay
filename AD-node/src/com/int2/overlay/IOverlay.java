@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * @author INT
+ * @author Minh N. Anh
  *
  */
 public abstract class IOverlay {
@@ -16,7 +16,11 @@ public abstract class IOverlay {
 	
 	public abstract int put(String key, String value, Integer ttl_sec) throws Exception;
 	
+	public abstract List<String> putKeysInParallel(List<String> keys, List<String> values, Integer ttlSec);
+	
 	public abstract List<String> get(String key, Integer maxvals ) throws Exception;
+
+	public abstract List<String> getKeysInParallel(List<String> keys, Integer maxvals) throws Exception;
 	
 	public abstract int remove(String key) throws Exception;
 	
